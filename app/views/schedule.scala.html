@@ -1,0 +1,56 @@
+@(myForm: Form[ScheduleBuild])
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("test") {
+@helper.form(action = routes.ScheduleController.save()) {
+    
+
+          <div class="control-group">
+            <label class="label label-info">Build?</label>
+            <div class="controls">
+              <label class="radio inline">
+                <input type="radio" name="build" id="optionsRadios1" value="yes" checked>
+                Yes 
+              </label>
+              <label class="radio inline">
+                <input type="radio" name="build" id="optionsRadios2" value="no">
+                No 
+              </label>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <label class="label label-info">Deploy?</label>
+            <div class="controls">
+              <label class="radio inline">
+                <input type="radio" name="deploy" id="optionsRadios1" value="yes" checked>
+                Yes
+              </label>
+              <label class="radio inline">
+                <input type="radio" name="deploy" id="optionsRadios2" value="no">
+                No
+              </label>
+            </div>
+          </div>
+          
+   		<div class="control-group">
+            <label class="label label-info" for="inlineCheckboxes">Select environment(s) to deploy to:</label>
+            <div class="controls">
+              <label class="checkbox inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+              </label>
+              <label class="checkbox inline">
+                <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+              </label>
+              <label class="checkbox inline">
+                <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+              </label>
+            </div>
+          </div>
+  
+  	<button type="submit" class="btn">Submit</button>
+    
+    @helper.inputPassword(myForm("password"))
+	}    
+}
