@@ -14,13 +14,24 @@
                 Yes 
               </label>
               <label class="radio inline">
-                <input type="radio" name="build" id="optionsRadios2" value="no">
+                <input type="radio" name="build" id="optionsRadios2" value="no"
+                  onclick>
                 No 
               </label>
             </div>
           </div>
+
+<script>
+    $("#optionsRadios2").click(function () {
+      $("#test").hide("normal");
+    });   
+
+    $("#optionsRadios1").click(function () {
+      $("#test").show("normal");
+    });       
+</script>
           
-          <div class="control-group">
+          <div class="control-group" id = "test">
             <label class="label label-info">Deploy?</label>
             <div class="controls">
               <label class="radio inline">
@@ -32,7 +43,7 @@
                 No
               </label>
             </div>
-          </div>
+          </div>​​​​
           
    		<div class="control-group">
             <label class="label label-info" for="inlineCheckboxes">Select environment(s) to deploy to:</label>
@@ -51,6 +62,6 @@
   
   	<button type="submit" class="btn">Submit</button>
     
-    @helper.inputPassword(myForm("password"))
+    
 	}    
 }

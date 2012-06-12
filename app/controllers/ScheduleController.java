@@ -26,6 +26,7 @@ public class ScheduleController extends Controller {
 		Form<ScheduleBuild> boundForm = scheduleForm.bindFromRequest();
 		ScheduleBuild scheduleBuild = boundForm.get();
 
+
 		return ok(String.format("Saved product %s", scheduleBuild));
 	}
 }
